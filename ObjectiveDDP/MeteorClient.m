@@ -256,7 +256,7 @@ static NSString *randomId(int length) {
     if ([self.delegate respondsToSelector:@selector(meteorClientDidConnectToWebsocket:)]) {
         [self.delegate meteorClientDidConnectToWebsocket:self];
     }
-    [self.ddp connectWithSession:nil version:@"pre1" support:nil];
+    [self.ddp connectWithSession:nil version:@"pre2" support:nil];
 }
 
 - (void)didReceiveConnectionError:(NSError *)error {
