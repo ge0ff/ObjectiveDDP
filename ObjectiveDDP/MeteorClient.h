@@ -3,6 +3,7 @@
 @protocol DDPAuthDelegate;
 @protocol DDPMeteorClientDelegate;
 
+extern NSString * const MeteorClientDidConnectNotification;
 extern NSString * const MeteorClientDidDisconnectNotification;
 
 /** Errors due to transport (connection) problems will have this domain. For errors being reported
