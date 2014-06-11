@@ -6,6 +6,7 @@
 #import "NSData+DDPHex.h"
 #import "DDPConnectedSubscriptionService.h"
 
+NSString * const MeteorClientDidConnectNotification = @"boundsj.objectiveddp.connected";
 NSString * const MeteorClientDidDisconnectNotification = @"boundsj.objectiveddp.disconnected";
 NSString * const MeteorClientTransportErrorDomain = @"boundsj.objectiveddp.transport";
 
@@ -257,6 +258,7 @@ static NSString *randomId(int length) {
         [self.delegate meteorClientDidConnectToWebsocket:self];
     }
     [self.ddp connectWithSession:nil version:@"pre2" support:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MeteorClientDidConnectNotification object:self];
 }
 
 - (void)didReceiveConnectionError:(NSError *)error {
