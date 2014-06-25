@@ -216,6 +216,11 @@ static NSString *randomId(int length) {
     [self _handleRemovedMessage:message msg:msg];
     [self _handleChangedMessage:message msg:msg];
     
+    if (msg && [msg isEqualToString:@"ping"]) {
+        //pong
+        [self.ddp pong:messageId];
+    }
+
     if (msg && [msg isEqualToString:@"connected"]) {
         self.connected = YES;
         
