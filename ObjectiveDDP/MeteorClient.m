@@ -298,7 +298,7 @@ static NSString *randomId(int length) {
         _disconnecting = NO;
         return;
     }
-    [self performSelector:@selector(_reconnect) withObject:self afterDelay:5.0];
+    [self performSelector:@selector(_reconnect) withObject:self afterDelay:3.0];
 }
 
 - (void)_invalidateUnresolvedMethods {
