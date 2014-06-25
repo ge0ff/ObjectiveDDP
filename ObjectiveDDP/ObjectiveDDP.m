@@ -36,6 +36,7 @@
 
     NSString *json = [self _buildJSONWithFields:fields parameters:nil];
     [self.webSocket send:json];
+    NSLog(@"======> sending pong");
 }
 
 //connect (client -> server)
